@@ -5,12 +5,56 @@
 	<version>4.0.1</version>
 	<packaging>jar</packaging>
 	<name>devutility.external.servlet</name>
-	<url>http://maven.apache.org</url>
+	<description>Some utilities for javax.servlet-api Version 4.*</description>
+	<url>https://github.com/eagle6688/devutility.external.servlet</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>9</maven.compiler.source>
 		<maven.compiler.target>9</maven.compiler.target>
 	</properties>
+
+	<!-- License -->
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<!-- License end -->
+
+	<!-- Developers -->
+	<developers>
+		<developer>
+			<name>Aldwin Su</name>
+			<email>fangyansu@163.com</email>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+	<!-- Developers end -->
+
+	<!-- scm -->
+	<scm>
+		<connection>scm:git:https://github.com/eagle6688/devutility.external.servlet.git</connection>
+		<developerConnection>scm:git:https://github.com/eagle6688/devutility.external.servlet.git</developerConnection>
+		<url>https://github.com/eagle6688/devutility.external.servlet</url>
+		<tag>v${project.version}</tag>
+	</scm>
+	<!-- scm end -->
+
+	<!-- distributionManagement -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<name>Maven Central Staging Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+	<!-- distributionManagement end -->
+
 	<dependencies>
 		<!-- Servlet -->
 		<dependency>
@@ -28,4 +72,66 @@
 		</dependency>
 		<!-- devutility end -->
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.8</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
