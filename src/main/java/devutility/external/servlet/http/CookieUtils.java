@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import devutility.internal.lang.StringHelper;
-import devutility.internal.net.UrlCoderHelper;
+import devutility.internal.net.UrlCoderUtils;
 
 public class CookieUtils {
 	/**
@@ -65,7 +65,7 @@ public class CookieUtils {
 			return null;
 		}
 
-		Cookie cookie = new Cookie(name, UrlCoderHelper.encode(value));
+		Cookie cookie = new Cookie(name, UrlCoderUtils.encode(value));
 
 		if (!StringHelper.isNullOrEmpty(domain)) {
 			cookie.setDomain(domain);
@@ -135,7 +135,7 @@ public class CookieUtils {
 			return null;
 		}
 
-		return UrlCoderHelper.decode(cookie.getValue());
+		return UrlCoderUtils.decode(cookie.getValue());
 	}
 
 	public static boolean remove(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, String name) {
