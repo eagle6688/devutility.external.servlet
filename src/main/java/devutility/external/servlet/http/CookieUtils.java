@@ -4,7 +4,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import devutility.internal.lang.StringHelper;
+import devutility.internal.lang.StringUtils;
 import devutility.internal.net.UrlCoderUtils;
 
 public class CookieUtils {
@@ -61,17 +61,17 @@ public class CookieUtils {
 	}
 
 	public static Cookie create(String name, String value, String domain, String path, int expireSeconds, boolean secure) {
-		if (StringHelper.isNullOrEmpty(name) || value == null) {
+		if (StringUtils.isNullOrEmpty(name) || value == null) {
 			return null;
 		}
 
 		Cookie cookie = new Cookie(name, UrlCoderUtils.encode(value));
 
-		if (!StringHelper.isNullOrEmpty(domain)) {
+		if (!StringUtils.isNullOrEmpty(domain)) {
 			cookie.setDomain(domain);
 		}
 
-		if (StringHelper.isNullOrEmpty(path)) {
+		if (StringUtils.isNullOrEmpty(path)) {
 			path = "/";
 		}
 
@@ -107,7 +107,7 @@ public class CookieUtils {
 	}
 
 	public static Cookie get(Cookie[] cookies, String name) {
-		if (cookies == null || cookies.length == 0 || StringHelper.isNullOrEmpty(name)) {
+		if (cookies == null || cookies.length == 0 || StringUtils.isNullOrEmpty(name)) {
 			return null;
 		}
 
