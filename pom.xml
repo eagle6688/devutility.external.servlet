@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.eagle6688</groupId>
 	<artifactId>devutility.external.servlet</artifactId>
-	<version>4.0.5</version>
+	<version>4.0.6</version>
 	<packaging>jar</packaging>
 	<name>devutility.external.servlet</name>
 	<description>Some utilities for javax.servlet-api Version 4.*</description>
