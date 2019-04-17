@@ -7,11 +7,18 @@ import javax.servlet.http.HttpServletResponse;
 import devutility.internal.lang.StringUtils;
 import devutility.internal.net.UrlCoderUtils;
 
+/**
+ * 
+ * CookieUtils
+ * 
+ * @author: Aldwin Su
+ * @version: 2019-04-17 19:22:58
+ */
 public class CookieUtils {
 	/**
 	 * Set a cookie
-	 * @param httpServletResponse: Get HttpServletResponse object
-	 * @param cookie: Cookie object
+	 * @param httpServletResponse HttpServletResponse object
+	 * @param cookie Cookie object
 	 */
 	public static void set(HttpServletResponse httpServletResponse, Cookie cookie) {
 		if (httpServletResponse == null || cookie == null) {
@@ -23,13 +30,13 @@ public class CookieUtils {
 
 	/**
 	 * Set a cookie
-	 * @param httpServletResponse: Get HttpServletResponse object
-	 * @param name: Cookie name
-	 * @param value: Cookie value
-	 * @param domain: Cookie domain
-	 * @param path: Cookie path
-	 * @param expireSeconds: Expire time in seconds
-	 * @param secure: Secure or not
+	 * @param httpServletResponse Get HttpServletResponse object
+	 * @param name Cookie name
+	 * @param value Cookie value
+	 * @param domain Cookie domain
+	 * @param path Cookie path
+	 * @param expireSeconds Expire time in seconds
+	 * @param secure Secure or not
 	 */
 	public static void set(HttpServletResponse httpServletResponse, String name, String value, String domain, String path, int expireSeconds, boolean secure) {
 		Cookie cookie = create(name, value, domain, path, expireSeconds, secure);

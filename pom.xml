@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.eagle6688</groupId>
 	<artifactId>devutility.external.servlet</artifactId>
-	<version>4.0.6</version>
+	<version>4.1.1</version>
 	<packaging>jar</packaging>
 	<name>devutility.external.servlet</name>
 	<description>Some utilities for javax.servlet-api Version 4.*</description>
@@ -68,7 +68,7 @@
 		<dependency>
 			<groupId>com.github.eagle6688</groupId>
 			<artifactId>devutility.internal</artifactId>
-			<version>1.2.10</version>
+			<version>1.3.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- devutility end -->
