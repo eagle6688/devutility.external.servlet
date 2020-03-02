@@ -21,6 +21,7 @@
 	</scm>
 	<!-- scm end -->
 
+	<!-- dependencies -->
 	<dependencies>
 		<dependency>
 			<groupId>com.github.eagle6688</groupId>
@@ -33,4 +34,5 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+	<!-- dependencies end -->
 </project>
